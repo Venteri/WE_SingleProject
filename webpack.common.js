@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Basic Webpack Setup',
+      title: 'John Figarro',
       template: path.resolve(__dirname, './src/index.html'),
     }),
     new ESLintPlugin(),
