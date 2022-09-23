@@ -1,4 +1,4 @@
-//import './styles/style.css';
+import './styles/style.css';
 //import { printMessage } from './scripts/test.ts';
 // import axios from "axios";
 // index.js
