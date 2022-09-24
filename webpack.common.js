@@ -5,8 +5,8 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   // 1
-  // Use the src/index.js file as entry point to bundle it.
-  // If the src/index.js file imports other JS files,
+  // Use the src/app.js file as entry point to bundle it.
+  // If the src/app.js file imports other JS files,
   // bundle them as well
   entry: path.resolve(__dirname, './src/app.js'),
   // 2
@@ -28,9 +28,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'John Figarro',
+      title: 'Memeodda',
       template: path.resolve(__dirname, './src/index.html'),
     }),
+    
     new ESLintPlugin(),
   ],
   // 5
