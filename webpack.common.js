@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       title: 'Memeodda',
       template: path.resolve(__dirname, './src/index.html'),
     }),
@@ -58,6 +59,20 @@ module.exports = {
         test: /\.tsx?/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      { // file loader for other .html
+        test: /\.html?/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].html',
+              outputPath: '/'
+            }
+          }
+        ],
+        exclude: /node_modules/,
+        exclude: path.resolve(__dirname, 'src/index.html')
       },
     ],
   },

@@ -1,7 +1,11 @@
 import './styles/style.css';
+import './about.html';
+import './contact.html';
+import './results.html';
+import './signup.html';
+import './scripts/signup.js'
 //import { printMessage } from './scripts/test.ts';
 // import axios from "axios";
-// index.js
 //import './scripts/signup.js'
 
 //printMessage(user);
