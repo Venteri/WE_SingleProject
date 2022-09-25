@@ -7,7 +7,7 @@ module.exports = {
   entry: {
         index: path.resolve(__dirname, './src/app.js'),
         signup: path.resolve(__dirname, './src/scripts/signup.js'),
-        about: path.resolve(__dirname, './src/app.js'),
+        about: path.resolve(__dirname, './src/scripts/api.js'),
         contact: path.resolve(__dirname, './src/app.js'),
         results: path.resolve(__dirname, './src/app.js'),
   },
@@ -79,6 +79,16 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        exclude: /node_modules/,
+        loader: 'file-loader',
+        type: 'asset',
+        options: {
+          name: 'images/[name].[ext]',
+        },
+      }
     ],
   },
   resolve: {

@@ -1,29 +1,19 @@
 import './styles/style.css';
-/*import 'about.html';
-import 'contact.html';
-import 'results.html';
-import 'signup.html';*/
-//import './scripts/signup.js'
+import './images/positive.svg';
+import './images/dj1.jpg';
+import './images/dj2.jpg';
 
 function app () {
-//import { printMessage } from './scripts/test.ts';
-// import axios from "axios";
-//import './scripts/signup.js'
+    /*Navbar logic*/
 
-//printMessage(user);
-//printMessage(['susan', 'eric', 'john']);
+    var menu = document.querySelector('#mobile-menu');
+    var menuLinks = document.querySelector('.navbar__menu');
 
-/*Navbar logic*/
-
-var menu = document.querySelector('#mobile-menu');
-var menuLinks = document.querySelector('.navbar__menu');
-
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-})
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    })
 
 }
-
 
 app();
