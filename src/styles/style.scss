@@ -769,12 +769,11 @@
   background:rgb(10, 0, 53);
   height: 40px;
   line-height: 40px;
-  position: relative;
   cursor: pointer;
   display: block;
   transition: 0.5s linear;
   max-width: 100%;
-  top: 5px;
+  padding: 30px;
 }
 
 .api__items li span {
