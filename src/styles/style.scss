@@ -773,7 +773,8 @@
   cursor: pointer;
   display: block;
   transition: 0.5s linear;
-  max-width: 100%
+  max-width: 100%;
+  top: 5px;
 }
 
 .api__items li span {
