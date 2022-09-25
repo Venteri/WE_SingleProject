@@ -6,18 +6,6 @@ document.addEventListener('DOMContentLoaded', getJoke);
 const apiURL = 'https://icanhazdadjoke.com/';
 button.addEventListener('click', getJoke);
 
-/*
-async function getJoke(){
-    const jokeData = await fetch('https://icanhazdadjoke.com/', {
-        header: {
-            'Accept': 'application/json'
-        }
-    });
-    const jokeObj = await jokeData.json();
-    jokeText.innerHTML = jokeObj.joke;
-    console.log(jokeObj);
-}*/
-
 function getJoke() {
     fetch(apiURL, {
         headers: {
