@@ -1,3 +1,4 @@
+import '../styles/style.css';
 /**Logic for form validation**/
 var email         = document.getElementById('email');
 var password      = document.getElementById('password');

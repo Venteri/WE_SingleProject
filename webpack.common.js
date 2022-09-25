@@ -4,40 +4,59 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  // 1
-  // Use the src/app.js file as entry point to bundle it.
-  // If the src/app.js file imports other JS files,
-  // bundle them as well
-  entry: path.resolve(__dirname, './src/app.js'),
-  // 2
-  // The bundles source code files shall result in a bundle.js file
-  // in the /dist folder
+  entry: {
+        index: path.resolve(__dirname, './src/app.js'),
+        signup: path.resolve(__dirname, './src/scripts/signup.js'),
+        about: path.resolve(__dirname, './src/app.js'),
+        contact: path.resolve(__dirname, './src/app.js'),
+        results: path.resolve(__dirname, './src/app.js'),
+  },
+
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].[fullhash].js',
     clean: true,
   },
-  // 3
-  // The /dist folder will be used to serve our application
-  // to the browser
+
   devServer: {
     static: path.resolve(__dirname, './dist'),
   },
-  // 4
-  // Add plugins for webpack here
+
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: 'Memeodda',
+      chunks: ['index'],
       template: path.resolve(__dirname, './src/index.html'),
     }),
-    
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      title: 'Memeodda',
+      chunks: ['about'],
+      template: path.resolve(__dirname, './src/about.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contact.html',
+      title: 'Memeodda',
+      chunks: ['contact'],
+      template: path.resolve(__dirname, './src/contact.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'signup.html',
+      title: 'Memeodda',
+      chunks: ['signup'],
+      template: path.resolve(__dirname, './src/signup.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'results.html',
+      title: 'Memeodda',
+      chunks: ['results'],
+      template: path.resolve(__dirname, './src/results.html'),
+    }), 
     new ESLintPlugin(),
   ],
-  // 5
-  // Integrate Babel in the build process
-  // Define which files to use the loader
+
   module: {
     // configuration regarding modules
     rules: [
@@ -59,20 +78,6 @@ module.exports = {
         test: /\.tsx?/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
-      { // file loader for other .html
-        test: /\.html?/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].html',
-              outputPath: '/'
-            }
-          }
-        ],
-        exclude: /node_modules/,
-        exclude: path.resolve(__dirname, 'src/index.html')
       },
     ],
   },
