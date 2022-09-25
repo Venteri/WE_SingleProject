@@ -1,0 +1,40 @@
+name: GitHub Pages
+
+on:
+  push: 
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        persist-credentials: false 
+        fetch-depth: 0 
+    - name: Build
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - run: npm i 
+    - run: npm install eslint -g -D
+    - run: eslint --init
+    - run: npm run build 
+    - name: commit in prod
+      run: |
+        cd dist
+        git init
+        git add -A
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m 'deploy'
+    - name: Force push to prod branch
+      uses: ad-m/github-push-action@prod
+      with:
+        github_token: ${{ secrets.DEPLOY_TOKEN }}
+        branch: prod
+        force: true
+        # We have to push from the folder where files were generated.
+        # Same were the new repo was initialized in the previous step
+        directory: dist
