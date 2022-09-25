@@ -16,7 +16,7 @@
 <body>
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="./index.html" id="navbar__logo"><i class="fa-sharp fa-solid fa-burger"></i> Memeodda</a>
+      <a href="./index.html" id="navbar__logo"><i class="fa-sharp fa-solid fa-burger"></i> Jokeodda</a>
       <div class="navbar__toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -43,9 +43,12 @@
   <div class="api__container">
     <h1>Your Joke:</h1>
     <div class="api__joke" id="api__joke--id">
-      <p>Hier könnte ihr Witz stehen</p>
+      <p class="api_p">A funny joke</p>
     </div>
-    <button class="api__joke--button">Get a Meme</button>
+    <button class="api__joke--button">Get a Joke</button>
+    <button class="api__button--add" type="submit">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
   </div>
 </section>
 
@@ -55,25 +58,21 @@
 </div>
 <div class="api__list_section">
     <form class="api__form">
-      <input class="api__input" type="text" name="text" id="txt">
-      <button class="api__button--add" type="submit">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </button>
     </form>
   <div class="api__items">
     <ul>
     </ul>
   </div>
   <script>
-    const inputText = document.querySelector('#txt');
+    const inputText = document.querySelector('.api_p');
     const myButton = document.querySelector('.api__button--add');
     const list = document.querySelector('.api__items')
     myButton.addEventListener('click', (e)=>{
-      if(inputText.value != "") {
+      if(inputText.innerHTML != "") {
         e.preventDefault();
         //create li
         const myLi = document.createElement('li');
-        myLi.innerHTML = inputText.value;
+        myLi.innerHTML = inputText.innerHTML;
         list.appendChild(myLi);
         //create span
         const mySpan = document.createElement('span');
@@ -90,7 +89,6 @@
           }, 500);
         })
       }
-      inputText.value = "";
     });
   </script>
 </div>
@@ -111,7 +109,7 @@
   <div class="social__media">
     <div class="social__media--wrap">
       <div class="footer__logo">
-        <a href="/" id="footer__logo"><i class="fa-sharp fa-solid fa-burger"></i></i>Memeodda</a>
+        <a href="/" id="footer__logo"><i class="fa-sharp fa-solid fa-burger"></i></i>Jokeodda</a>
       </div>
       <p class="website__right">© Velibor Trujic 2022. All rights reserved</p>
       <div class="social__icons">

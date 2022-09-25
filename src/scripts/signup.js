@@ -1,4 +1,4 @@
-import '../styles/style.css';
+import '../styles/style.scss';
 import '../app.js';
 /**Logic for form validation**/
 var email         = document.getElementById('email');
