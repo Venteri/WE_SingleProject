@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <!--<link rel="stylesheet" type="text/css" href="./styles/style.css">-->
   <script src="https://kit.fontawesome.com/74ef79b77e.js" crossorigin="anonymous"></script>
   <!--Font Kumbh Sans from Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,101 @@
       </ul>
     </div>
   </nav>
-  <script type="module" src="./app.js"></script>
+<!--Joke Generator section-->
+<section>
+  <div class="api__container">
+    <h1>Your Joke:</h1>
+    <div class="api__joke" id="api__joke--id">
+      <p>Hier könnte ihr Witz stehen</p>
+    </div>
+    <button class="api__joke--button">Get a Meme</button>
+  </div>
+</section>
+
+<!--List Items-->
+<div class="api_items_header">
+  <h1>Your Favourite Jokes</h1>
+</div>
+<div class="api__list_section">
+    <form class="api__form">
+      <input class="api__input" type="text" name="text" id="txt">
+      <button class="api__button--add" type="submit">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </form>
+  <div class="api__items">
+    <ul>
+    </ul>
+  </div>
+  <script>
+    const inputText = document.querySelector('#txt');
+    const myButton = document.querySelector('.api__button--add');
+    const list = document.querySelector('.api__items')
+    myButton.addEventListener('click', (e)=>{
+      if(inputText.value != "") {
+        e.preventDefault();
+        //create li
+        const myLi = document.createElement('li');
+        myLi.innerHTML = inputText.value;
+        list.appendChild(myLi);
+        //create span
+        const mySpan = document.createElement('span');
+        mySpan.innerHTML = "x";
+        myLi.appendChild(mySpan);
+      }
+      const close = document.querySelectorAll('span');
+      for(let i=0; i<close.length; i++){
+        close[i].addEventListener('click', ()=>{
+          close[i].parentElement.style.opacity = 0;
+          setTimeout(()=>{
+            close[i].parentElement.style.display = "none";
+            close[i].parentElement.remove();
+          }, 500);
+        })
+      }
+      inputText.value = "";
+    });
+  </script>
+</div>
+<!--Footer Section-->
+<div class="footer__container">
+  <div class="footer__links">
+    <div class="footer_link--wrapper">
+      <div class="footer__link--items">
+        <h2>About Us</h2>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">How it works</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Testimonials</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Careers</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Investments</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="social__media">
+    <div class="social__media--wrap">
+      <div class="footer__logo">
+        <a href="/" id="footer__logo"><i class="fa-sharp fa-solid fa-burger"></i></i>Memeodda</a>
+      </div>
+      <p class="website__right">© Velibor Trujic 2022. All rights reserved</p>
+      <div class="social__icons">
+        <a href="https://www.facebook.com" class="social__icon--link" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com" class="social__icon--link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" class="social__icon--link" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/" class="social__icon--link" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com" class="social__icon--link" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <!--<link rel="stylesheet" type="text/css" href="./styles/style.css">-->
   <script src="https://kit.fontawesome.com/74ef79b77e.js" crossorigin="anonymous"></script>
   <!--Font Kumbh Sans from Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,12 +39,12 @@
     </div>
   </nav>
   <!--form section-->
-  <script defer src="./scripts/signup.js"></script>
+  <script defer src="./scripts/signup.js"></script> <!-- does not work, don't know why-->
   <div class="form__section">
     <div class="form__header">
       <h1>Sign up for exclusive content:</h1>
     </div>
-    <div id="error"></div>
+    <div id="error" class="form__error"></div>
     <form action="./results.html" method="GET" id="form">
       <div>
         <label for="name" class="form__name">Name</label>
@@ -88,63 +88,32 @@
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of Service</a>
         </div>
       </div>
-      <div class="footer_link--wrapper">
-        <div class="footer__link--items">
-          <h2>About Us</h2>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">How it works</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Testimonials</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Careers</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Investments</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of Service</a>
-        </div>
-      </div>
-      <div class="footer_link--wrapper">
-        <div class="footer__link--items">
-          <h2>About Us</h2>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">How it works</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Testimonials</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Careers</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Investments</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of Service</a>
-        </div>
-      </div>
-      <div class="footer_link--wrapper">
-        <div class="footer__link--items">
-          <h2>About Us</h2>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">How it works</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Testimonials</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Careers</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Investments</a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of Service</a>
-        </div>
-      </div>
     </div>
     <div class="social__media">
       <div class="social__media--wrap">
         <div class="footer__logo">
-          <a href="/" id="footer__logo"><i class="fa-sharp fa-solid fa-burger"></i>Memeodda</a>
+          <a href="/" id="footer__logo"><i class="fa-sharp fa-solid fa-burger"></i></i>Memeodda</a>
         </div>
         <p class="website__right">© Velibor Trujic 2022. All rights reserved</p>
         <div class="social__icons">
-          <a href="/" class="social__icon--link" target="_blank">
+          <a href="https://www.facebook.com" class="social__icon--link" target="_blank">
             <i class="fab fa-facebook"></i>
           </a>
-          <a href="/" class="social__icon--link" target="_blank">
+          <a href="https://www.instagram.com" class="social__icon--link" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="/" class="social__icon--link" target="_blank">
+          <a href="https://twitter.com" class="social__icon--link" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="/" class="social__icon--link" target="_blank">
+          <a href="https://www.linkedin.com/" class="social__icon--link" target="_blank">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="/" class="social__icon--link" target="_blank">
+          <a href="https://www.youtube.com" class="social__icon--link" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
     </div>
   </div>
-  <script type="module" src="./app.js"></script>
 </body>
 </html>
